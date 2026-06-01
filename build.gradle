@@ -1,0 +1,23 @@
+plugins {
+	id 'java'
+        id 'application' 
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation('org.junit.jupiter:junit-jupiter:5.6.0')
+        implementation files('jars/MyBank.jar')
+}
+application {
+    mainClass = 'com.mybank.gui.SWINGDemo'  
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
